@@ -1,0 +1,14 @@
+baseURL = "https://arzg.github.io/lang/"
+languageCode = "en-uk"
+title = "Make A Language"
+
+# disable Hugo’s automatic syntax highlighting of code blocks
+# since we use PrismJS instead
+[markup.highlight]
+codeFences = false
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[minify.tdewolff.html]
+keepWhitespace = false

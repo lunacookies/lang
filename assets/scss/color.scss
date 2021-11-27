@@ -1,0 +1,41 @@
+$hue: 240;
+
+$light-saturation: 20%;
+$light-lightness: 95%;
+
+$dark-saturation: 15%;
+$dark-lightness: 18%;
+
+$light-background: hsl($hue, $light-saturation * 2, $light-lightness);
+$light-foreground: hsl($hue, $light-saturation, $light-lightness - 80%);
+
+$dark-background: hsl($hue, $dark-saturation, $dark-lightness);
+$dark-foreground: hsl($hue, $dark-saturation, $dark-lightness + 75%);
+
+body {
+  background-color: $light-background;
+  color: $light-foreground;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $dark-background;
+    color: $dark-foreground;
+  }
+}
+
+@mixin faded-color {
+  color: hsl($hue, $light-saturation, $light-lightness - 25%);
+  @media (prefers-color-scheme: dark) {
+    color: hsl($hue, $dark-saturation, $dark-lightness + 40%);
+  }
+}
+
+$light-selection: hsl($hue, $light-saturation + 20%, $light-lightness - 5%);
+$dark-selection: hsl($hue, $dark-saturation, $dark-lightness + 50%);
+
+::selection {
+  background-color: $light-selection;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $dark-selection;
+  }
+}

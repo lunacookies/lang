@@ -1,0 +1,32 @@
+{{ define "body" }}
+  <header class="header-area">
+    <h1 class="title">{{ .Title }}</h1>
+  </header>
+
+  <main>
+    {{ .Content }}
+
+    {{ with .OutputFormats.Get "rss" }}
+      <p>
+        There’s an
+        <a
+          rel="{{ .Rel }}"
+          type="{{ .MediaType.Type }}"
+          href="{{ .Permalink }}"
+          title="{{ $.Site.Title }}"
+        >
+          RSS Feed</a
+        >!
+      </p>
+    {{ end }}
+  </main>
+
+  <section class="pages">
+    {{ range .Pages }}
+      <section class="page">
+        <p class="title"><a href="{{ .Permalink }}">{{ .Title }}</a></p>
+        {{ partial "page-info" . }}
+      </section>
+    {{ end }}
+  </section>
+{{ end }}

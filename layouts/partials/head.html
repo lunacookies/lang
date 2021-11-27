@@ -1,0 +1,36 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>{{ .Title }} · {{ .Site.Title }}</title>
+
+{{ $styles := resources.Get "scss/main.scss" | toCSS | postCSS | fingerprint }}
+{{ with .OutputFormats.Get "rss" }}
+  <link
+    rel="{{ .Rel }}"
+    type="{{ .MediaType.Type }}"
+    href="{{ .Permalink }}"
+    title="{{ $.Site.Title }}"
+  />
+{{ end }}
+
+
+<link
+  rel="stylesheet"
+  href="{{ $styles.Permalink }}"
+  integrity="{{ $styles.Data.Integrity }}"
+/>
+
+<script src="https://unpkg.com/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+<script src="https://unpkg.com/anchor-js@4.3.1/anchor.min.js"></script>
+<script src="https://unpkg.com/prismjs@1.25.0/components/prism-core.min.js"></script>
+<script src="https://unpkg.com/prismjs@1.25.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+<script>
+  window.onload = () => {
+    quicklink.listen();
+  };
+
+  document.addEventListener("DOMContentLoaded", function (event) {
+    anchors.add("main h1");
+  });
+</script>
