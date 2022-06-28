@@ -1,0 +1,18 @@
+.return-notice {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 0.5rem 1rem;
+
+  font-size: 0.8rem;
+  @include faded-color;
+
+  $border-color: black;
+  border-bottom: 1px solid rgba($border-color, 0.2);
+  background-color: hsl($hue, $light-saturation * 4, $light-lightness + 3%);
+  @media (prefers-color-scheme: dark) {
+    border-bottom: 2px solid rgba($border-color, 0.7);
+    background-color: hsl($hue, $dark-saturation, $dark-lightness - 6%);
+  }
+}
