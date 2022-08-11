@@ -9,6 +9,16 @@ body {
 
   max-width: $textblock-width;
   padding: $padding;
+
+  // work around weird browser bugs
+  // with phantom horizontal scroll
+  // - blink  linux   with    scroll (jawad)
+  // - blink  linux   without scroll (mono)
+  // - webkit macos   without scroll (me)
+  // - blink  macos   without scroll (me)
+  // - gecko  windows without scroll (dawn)
+  // - gecko  windows with    scroll (deedeebees)
+  overflow-x: hidden;
 }
 
 main {
