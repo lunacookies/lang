@@ -2,7 +2,7 @@
 <script src=https://unpkg.com/anchor-js@4.3.1/anchor.min.js></script>
 <script src=https://unpkg.com/prismjs@1.25.0/components/prism-core.min.js></script>
 <script src=https://unpkg.com/prismjs@1.25.0/plugins/autoloader/prism-autoloader.min.js></script>
-<script>window.onload=()=>{quicklink.listen()},document.addEventListener("DOMContentLoaded",function(){anchors.add("main h1")})</script></head><body><p class=return-notice><a href=https://lunacookies.github.io>return to main site</a> …</p><nav class=floating-nav><p><a href=https://lunacookies.github.io/lang/>◀ home</a></p></nav><header class=header-area><h1 class=title>Part Fourteen: Comments</h1><section class=page-info><ul><li>10 December 2020</li><li>672 words</li><li>three minute read</li></ul></section></header><main><p>The first thing we need to do is teach the lexer to recognise comments. We’ll begin with a test:</p><pre><code class=language-rust>// lexer.rs
+<script>window.onload=()=>{quicklink.listen()},document.addEventListener("DOMContentLoaded",function(){anchors.add("main h1")})</script></head><body><p class=return-notice><a href=https://lunaa.me>return to main site</a> …</p><nav class=floating-nav><p><a href=https://lunacookies.github.io/lang/>◀ home</a></p></nav><header class=header-area><h1 class=title>Part Fourteen: Comments</h1><section class=page-info><ul><li>10 December 2020</li><li>672 words</li><li>three minute read</li></ul></section></header><main><p>The first thing we need to do is teach the lexer to recognise comments. We’ll begin with a test:</p><pre><code class=language-rust>// lexer.rs
 
 #[cfg(test)]
 mod tests {

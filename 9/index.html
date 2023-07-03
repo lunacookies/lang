@@ -2,7 +2,7 @@
 <script src=https://unpkg.com/anchor-js@4.3.1/anchor.min.js></script>
 <script src=https://unpkg.com/prismjs@1.25.0/components/prism-core.min.js></script>
 <script src=https://unpkg.com/prismjs@1.25.0/plugins/autoloader/prism-autoloader.min.js></script>
-<script>window.onload=()=>{quicklink.listen()},document.addEventListener("DOMContentLoaded",function(){anchors.add("main h1")})</script></head><body><p class=return-notice><a href=https://lunacookies.github.io>return to main site</a> …</p><nav class=floating-nav><p><a href=https://lunacookies.github.io/lang/>◀ home</a></p></nav><header class=header-area><h1 class=title>Part Nine: Function Calls</h1><section class=page-info><ul><li>8 November 2020</li><li>4465 words</li><li>22 minute read</li></ul></section></header><main><p>As we did last time, we need to choose a syntax, this time for function calls.</p><pre><code class=language-rust>// Rust syntax
+<script>window.onload=()=>{quicklink.listen()},document.addEventListener("DOMContentLoaded",function(){anchors.add("main h1")})</script></head><body><p class=return-notice><a href=https://lunaa.me>return to main site</a> …</p><nav class=floating-nav><p><a href=https://lunacookies.github.io/lang/>◀ home</a></p></nav><header class=header-area><h1 class=title>Part Nine: Function Calls</h1><section class=page-info><ul><li>8 November 2020</li><li>4465 words</li><li>22 minute read</li></ul></section></header><main><p>As we did last time, we need to choose a syntax, this time for function calls.</p><pre><code class=language-rust>// Rust syntax
 f(a, b, c);
 no_params();
 </code></pre><p>Again, as I said in the previous part, parentheses and commas are annoying. Hence, Eldiro will use a different syntax in the spirit of ML-family languages:</p><pre><code>f a b c
